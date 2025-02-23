@@ -45,5 +45,5 @@ The system will be capable of:
 |---------|-----------|----------------------------------|
 | Week 1 | Scope | Define project objectives and scope  |
 | Week 2 | Data Collection | Research and data collection |
-| Week 3 | Data Pre-processing  | Data pre-processing and structuring pipeline  |
-| Week 4 | Building Schemas | Dataset Exploration, schema creation and Data ingestion pipeline |
+| Week 3 | Structuring pipeline  | FInalizing dataset and structuring pipeline  |
+| Week 4 | Building Schemas | Dataset Exploration, schema creation and Data ingestion automation |
