@@ -48,3 +48,25 @@ The system will be capable of:
 | Week 4    | Building Schemas     | Dataset exploration, schema creation, and data ingestion automation   |
 | Week 5    | Data Preprocessing   | Validation of Dataset after merging and Data preprocessing |
 | Week 6    | Data Preprocessing(continued) | Data preprocessing and model preparation |
+
+
+### 👩🏻‍💻🧑🏻‍💻 Collaborators
+
+[//]: # ( readme: collaborators -start )
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/digitaldiv">
+            <img src="https://avatars.githubusercontent.com/u/1842870?v=4" width="100;" alt="Div Pithadia"/>
+            <br />
+            <sub><b>Div Pithadia</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/chargershub">
+            <img src="https://avatars.githubusercontent.com/u/160267476?v=4" width="100;" alt="Chargers hub"/>
+            <br />
+            <sub><b>Chargers Hub</b></sub>
+        </a>
+    </td></tr>
+</table>
