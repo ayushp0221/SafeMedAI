@@ -47,3 +47,4 @@ The system will be capable of:
 | Week 3    | Structuring Pipeline | Finalizing dataset and structuring pipeline                         |
 | Week 4    | Building Schemas     | Dataset exploration, schema creation, and data ingestion automation   |
 | Week 5    | Data Preprocessing   | Validation of Dataset after merging and Data preprocessing |
+| Week 6    | Data Preprocessing(continued) | Data preprocessing and model preparation |
