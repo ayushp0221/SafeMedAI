@@ -40,14 +40,20 @@ The system will be capable of:
 
 ## 🏁 Milestones 
 
-| Date/Week | Milestone            | Deliverables/Features                                               |
-|-----------|----------------------|---------------------------------------------------------------------|
-| Week 1    | Scope                | Define project objectives and scope                                 |
-| Week 2    | Data Collection      | Research and data collection                                        |
-| Week 3    | Structuring Pipeline | Finalizing dataset and structuring pipeline                         |
-| Week 4    | Building Schemas     | Dataset exploration, schema creation, and data ingestion automation   |
-| Week 5    | Data Preprocessing   | Validation of Dataset after merging and Data preprocessing |
-| Week 6    | Data Preprocessing(continued) | Data preprocessing and model preparation |
+🏁 **Milestones**
+
+| Date/Week | Milestone              | Deliverables/Features                                                  |
+|-----------|------------------------|------------------------------------------------------------------------|
+| Week 1    | Scope                  | Define project objectives, scope, and team roles                       |
+| Week 2    | Data Collection        | Research potential datasets, initiate collection, and setup GitHub Wiki|
+| Week 3    | Structuring Pipeline   | Finalize dataset sources, explore pipeline structure, and study compliance |
+| Week 4    | Building Schemas       | Create data schemas, automate extraction, and begin dataset merging    |
+| Week 5    | Data Preprocessing     | Merge datasets, validate data, and explore transformer-based models    |
+| Week 6    | Data Preprocessing (continued) | Clean data, finalize preprocessing, and initiate model selection |
+| Week 7    | Environment Setup      | Install LLaMA/MedLLaMA, finalize preprocessing, and update documentation |
+| Week 8    | Spring Break           | No deliverables                                                        |
+| Week 9    | Refined Dataset & EDA  | Refine DDI dataset using MedLLaMA, perform EDA, and update wiki        |
+| Week 10   | Interface & Evaluation | Build Gradio interface, analyze model outputs, finalize dataset        |
 
 
 ### 👩🏻‍💻🧑🏻‍💻 Collaborators
