@@ -1,60 +1,145 @@
-# Enhancing Pharmacovigilance: Predicting Adverse Drug Interactions Using MedLLaMA
 
-## About
-- **Term**: Spring 2025  
-- **Team**: Team Green  
-- **Students**: Yash Raythatha, Ayushi Jar, Saurabh, Ayush Prajapati  
+# Enhancing Pharmacovigilance: Predicting Adverse Drug Interactions Using MedLLAMA
 
-#️⃣ **Keywords**: **MLOps**, **Python**, **Deep learning**, **Named Entity Recognition (NER)**, **Natural Language Processing**, **Healthcare AI**
+**Term:** Spring 2025  
+**Team:** Team Green  
+**Advisor:** Prof. Div Pithadia | Department: ECECS | Tagliatela College of Engineering
+
+---
+
+## 👩‍🎓 Students
+- Yash Raythatha
+- Ayushi Jar
+- Saurabh
+- Ayush Prajapati
+
+---
+
+## #️⃣ Keywords
+MLOps, Python, Fine-tuning, Drug Interaction Prediction, Healthcare AI, Google Colab, medalpaca-7b, Hugging face, Gradio, Parameter efficient finetuning.
+
+---
 
 ## 💻 Project Abstract
-In modern medicine, polypharmacy (using multiple medications) increases the risk of adverse **drug interactions**. This project develops an **AI-driven system** that predicts **drug interactions** and **side effects** using **deep learning models** trained on large-scale medical **datasets**. By leveraging **MLOps** best practices, the system ensures streamlined integration and continuous deployment. The project also incorporates **Named Entity Recognition (NER)** to accurately extract drug names from clinical texts and employs **Natural Language Processing** techniques to enhance prediction accuracy paving the way for innovative solutions in **Healthcare AI**.
+Drug interactions are a major cause of hospitalizations and adverse health outcomes. Current tools often lack accessibility and interpretability. This project bridges the gap using data science combined with clinical knowledge and large language models (LLMs).
 
-### *Key Features*
-- **Drug Interaction Prediction**: Predict adverse reactions between multiple drugs.
-- **Side Effect Analysis**: Identify potential symptoms and reactions.
+We developed an AI-powered model to predict potential side effects caused by commonly prescribed drug combinations and generate clinically relevant, human-understandable summaries using the fine-tuned MedLLAMA model.
 
-The project will leverage **Python**, **PyTorch**, **Natural Language Processing (NLP)** techniques, and **cloud-based deployment** to create an effective AI system for healthcare professionals.
+---
 
 ## 🫧 Background
+Clinical decision-making tools that assess drug-drug interactions often provide limited or overly technical outputs. Our goal was to enhance accessibility and clinical relevance by developing an AI-driven platform capable of offering reliable, easy-to-interpret interaction information using modern machine learning methods.
 
-### *Why This Project?*
-With increasing prescription complexity, drug interactions can cause severe **side effects**, hospitalizations, or even fatalities. Existing tools often rely on **rule-based systems** that lack accuracy in real-world applications.
-
-### *Challenges Addressed*
-- **Large Dataset Complexity**: Extracting meaningful insights from **FAERS**, **Medline**, and **openFDA**.
-- **Real-Time Inference**: Ensuring fast and accurate drug interaction predictions.
-- **Healthcare Compliance**: Maintaining **HIPAA** standards and data privacy regulations.
-- **Scalability**: Deploying an **AI-powered system** for large-scale use in hospitals and pharmacies.
-
-By leveraging **deep learning**, **Natural Language Processing**, and retrieval-augmented generation, this project aims to provide accurate and explainable drug interaction predictions.
+---
 
 ## 📋 High-Level Requirements
+- Develop a machine learning model capable of predicting and explaining drug-drug interactions.
+- Fine-tune a large language model (LLAMA-7B) with curated datasets.
+- Build a user-friendly Gradio-based web interface for clinicians and researchers.
+- Deploy a publicly accessible version for broader testing and feedback.
 
-### ✅ Functional Requirements
-The system will be capable of:
-1. Predicting adverse drug interactions (ADIs) based on existing datasets.
-2. Identifying potential side effects using **deep learning** models.
-3. Retrieving external medical knowledge (e.g., **Medline**, **FAERS**, **openFDA**).
-4. Supporting **cloud-based deployment** for real-world integration.
+---
 
-## 🏁 Milestones 
+## 📋 Functional Requirements
+- Merge and preprocess multiple datasets related to drug-drug interactions.
+- Fine-tune MedLLAMA 7B model using expanded dataset.
+- Develop a Gradio-based web application for users to input drug pairs.
+- Provide human-readable interaction descriptions, mechanisms, and severity levels.
 
-🏁 **Milestones**
+---
 
-| Date/Week | Milestone              | Deliverables/Features                                                  |
-|-----------|------------------------|------------------------------------------------------------------------|
-| Week 1    | Scope                  | Define project objectives, scope, and team roles                       |
-| Week 2    | Data Collection        | Research potential datasets, initiate collection, and setup GitHub Wiki|
-| Week 3    | Structuring Pipeline   | Finalize dataset sources, explore pipeline structure, and study compliance |
-| Week 4    | Building Schemas       | Create data schemas, automate extraction, and begin dataset merging    |
-| Week 5    | Data Preprocessing     | Merge datasets, validate data, and explore transformer-based models    |
-| Week 6    | Data Preprocessing (continued) | Clean data, finalize preprocessing, and initiate model selection |
-| Week 7    | Environment Setup      | Install LLaMA/MedLLaMA, finalize preprocessing, and update documentation |
-| Week 8    | Spring Break           | No deliverables                                                        |
-| Week 9    | Refined Dataset & EDA  | Refine DDI dataset using MedLLaMA, perform EDA, and update wiki        |
-| Week 10   | Interface & Evaluation | Build Gradio interface, analyze model outputs, finalize dataset        |
+## ✅ Non-Functional Requirements
+- The system must be cloud deployable.
+- Model inference must be GPU-optimized using 4-bit quantization.
+- Web interface should be responsive and mobile-accessible.
+- Secure API for future integration with EHR (Electronic Health Record) systems.
 
+---
+
+## ✨ Key Features
+- **Interactive UI**: Easy-to-use Gradio interface for clinicians and researchers.
+- **Clinical-Grade Predictions**: Human-readable interaction descriptions generated from fine-tuned MedLLAMA model.
+- **Interaction Management Tips**: The output not only explains the interaction, but also **provides actionable advice** on what medical measures should be taken if two drugs are consumed together (e.g., dose adjustment, monitoring symptoms, alternative medication suggestions).
+
+---
+
+## ✍🏼 Conceptual Design
+The project pipeline is as follows:
+- Merge data from DDI Inter and PubChem.
+- Expand the dataset using LLM.
+- Preprocess and curate high-quality human-readable side effect data.
+- Fine-tune the MedLLaMA-7B model using LoRA for parameter-efficient training.
+- Deploy using a Gradio interface for user interaction.
+
+All modeling, training, and experimentation were conducted using **Google Colab**.
+
+---
+
+## 🛠️ Technical Design
+- **Base Model:** `medalpaca/medalpaca-7b (LLAMA-7B)`
+- **Fine-tuning Strategy:** LoRA (Low-Rank Adaptation), 4-bit quantization for resource efficiency
+- **Frameworks and Libraries:** Hugging Face Transformers, PEFT, Accelerate, Gradio
+- **Deployment:** Gradio (or custom server hosting)
+
+---
+
+## 📦 Required Resources
+- Google Colab (GPU enabled)
+- PyTorch (4-bit compatible version)
+- Hugging Face Transformers and PEFT libraries
+- Gradio for web-based UI
+- Jupyter for data preprocessing and testing
+
+---
+
+## 🏁 Project Plan & Milestones
+
+| Week | Milestone/Activity | Deliverables/Features |
+|:----|:--------------------|:----------------------|
+| 1    | Define Scope and Requirements | Finalized project scope and high-level objectives |
+| 2    | Dataset Collection | Sourced DDI Inter and PubChem datasets |
+| 3    | Dataset Merging | Merged datasets and initial validation |
+| 4    | Dataset Expansion | Used ChatGPT-4.0 for side effect generation |
+| 5    | Preprocessing | Cleaned and structured expanded dataset |
+| 6    | Model Setup | Prepared MedLLaMA-7B base model on Colab |
+| 7    | Fine-tuning Strategy Finalization | Integrated LoRA + 4-bit quantization strategies |
+| 8    | Fine-tuning Model | Conducted parameter-efficient fine-tuning |
+| 9    | Evaluation and Metrics Analysis | Measured perplexity, manual quality checks |
+| 10   | UI Development | Built Gradio-based user interface |
+| 11   | Integration and Testing | Connected model output to UI, tested workflows |
+| 12   | Final Deployment and Demo | Hosted project on Hugging Face Spaces / Web server |
+
+---
+
+## 🧪 Test Cases
+- Validate model output for a wide range of drug pairs.
+- Check output readability, accuracy of predicted side effects, and medical plausibility.
+- Load-testing of the web interface under concurrent users.
+
+---
+
+## 👩🏻‍🏫 Installation Instructions
+
+**Minimum Requirements:**
+- Google Colab account with GPU access
+- Installed libraries (via `requirements.txt`) including Gradio, transformers, peft, accelerate
+
+**Steps to Run Locally (Optional for Further Development):**
+
+```bash
+git clone <this-repo-link>
+cd project-directory
+pip install -r requirements.txt
+```
+---
+
+## 💡 Tips for Best Usage
+- Use Google Colab with GPU enabled (`Runtime > Change Runtime Type > GPU`) for smooth model loading and interaction.
+- Ensure a stable internet connection while loading large models.
+- For deployments, prefer Hugging Face Spaces or GPU-backed servers for better inference speeds.
+- Validate unknown drug combinations with medical experts before clinical usage.
+
+---
 
 ### 👩🏻‍💻🧑🏻‍💻 Collaborators
 
