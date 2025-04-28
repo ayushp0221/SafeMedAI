@@ -1,4 +1,4 @@
-# DRUG INTERACTION PREDICTION AND THEIR SIDE EFFECTS
+# Enhancing Pharmacovigilance: Predicting Adverse Drug Interactions Using MedLLaMA
 
 ## About
 - **Term**: Spring 2025  
