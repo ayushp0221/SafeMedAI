@@ -73,6 +73,8 @@ The project pipeline is as follows:
 
 All modeling, training, and experimentation were conducted using **Google Colab**.
 
+![Architecture Flow Diagram](architecture_flow_diagram.png)
+
 ---
 
 ## 🛠️ Technical Design
@@ -131,6 +133,7 @@ git clone <this-repo-link>
 cd project-directory
 pip install -r requirements.txt
 ```
+
 ---
 
 ## 💡 Tips for Best Usage
@@ -143,7 +146,6 @@ pip install -r requirements.txt
 
 ### 👩🏻‍💻🧑🏻‍💻 Collaborators
 
-[//]: # ( readme: collaborators -start )
 <table>
 <tr>
     <td align="center">
