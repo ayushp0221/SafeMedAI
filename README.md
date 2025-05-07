@@ -59,7 +59,7 @@ Clinical decision-making tools that assess drug-drug interactions often provide 
 ## ✨ Key Features
 - **Interactive UI**: Easy-to-use Gradio interface for clinicians and researchers.
 - **Clinical-Grade Predictions**: Human-readable interaction descriptions generated from fine-tuned MedLLAMA model.
-- **Interaction Management Tips**: The output not only explains the interaction, but also **provides actionable advice** on what medical measures should be taken if two drugs are consumed together (e.g., dose adjustment, monitoring symptoms, alternative medication suggestions).
+- **Interaction Management Tips**: The output not only explains the interaction, but also **provides actionable advice** on what medical measures should be taken if two drugs are consumed together.
 
 ---
 
@@ -73,7 +73,9 @@ The project pipeline is as follows:
 
 All modeling, training, and experimentation were conducted using **Google Colab**.
 
-![Architecture Flow Diagram](architecture_flow_diagram.png)
+<div align="center">
+  <img src="architecture_flow_diagram.png" alt="Architecture Flow Diagram" width="500"/>
+</div>
 
 ---
 
@@ -121,12 +123,6 @@ All modeling, training, and experimentation were conducted using **Google Colab*
 ---
 
 ## 👩🏻‍🏫 Installation Instructions
-
-**Minimum Requirements:**
-- Google Colab account with GPU access
-- Installed libraries (via `requirements.txt`) including Gradio, transformers, peft, accelerate
-
-**Steps to Run Locally (Optional for Further Development):**
 
 ```bash
 git clone <this-repo-link>
