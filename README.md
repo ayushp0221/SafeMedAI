@@ -1,5 +1,4 @@
-
-# Enhancing Pharmacovigilance: Predicting Adverse Drug Interactions Using MedLLAMA
+# Enhancing Pharmacovigilance: Predicting Adverse Drug Interactions Using MedAlpaca (LLaMA-7B)
 
 **Term:** Spring 2025  
 **Team:** Team Green  
@@ -16,14 +15,14 @@
 ---
 
 ## #️⃣ Keywords
-MLOps, Python, Fine-tuning, Drug Interaction Prediction, Healthcare AI, Google Colab, medalpaca-7b, Hugging face, Gradio, Parameter efficient finetuning.
+MLOps, Python, Fine-tuning, Drug Interaction Prediction, Healthcare AI, Google Colab, MedAlpaca, Hugging Face, Gradio, LoRA, 4-bit Quantization
 
 ---
 
 ## 💻 Project Abstract
 Drug interactions are a major cause of hospitalizations and adverse health outcomes. Current tools often lack accessibility and interpretability. This project bridges the gap using data science combined with clinical knowledge and large language models (LLMs).
 
-We developed an AI-powered model to predict potential side effects caused by commonly prescribed drug combinations and generate clinically relevant, human-understandable summaries using the fine-tuned MedLLAMA model.
+We developed an AI-powered model to predict potential side effects caused by commonly prescribed drug combinations and generate clinically relevant, human-understandable summaries using a fine-tuned MedAlpaca (LLaMA 7B) model.
 
 ---
 
@@ -34,7 +33,7 @@ Clinical decision-making tools that assess drug-drug interactions often provide 
 
 ## 📋 High-Level Requirements
 - Develop a machine learning model capable of predicting and explaining drug-drug interactions.
-- Fine-tune a large language model (LLAMA-7B) with curated datasets.
+- Fine-tune a large language model (LLaMA-7B) with curated datasets.
 - Build a user-friendly Gradio-based web interface for clinicians and researchers.
 - Deploy a publicly accessible version for broader testing and feedback.
 
@@ -42,7 +41,7 @@ Clinical decision-making tools that assess drug-drug interactions often provide 
 
 ## 📋 Functional Requirements
 - Merge and preprocess multiple datasets related to drug-drug interactions.
-- Fine-tune MedLLAMA 7B model using expanded dataset.
+- Fine-tune MedAlpaca 7B model using expanded dataset with LoRA and 4-bit quantization.
 - Develop a Gradio-based web application for users to input drug pairs.
 - Provide human-readable interaction descriptions, mechanisms, and severity levels.
 
@@ -58,8 +57,16 @@ Clinical decision-making tools that assess drug-drug interactions often provide 
 
 ## ✨ Key Features
 - **Interactive UI**: Easy-to-use Gradio interface for clinicians and researchers.
-- **Clinical-Grade Predictions**: Human-readable interaction descriptions generated from fine-tuned MedLLAMA model.
-- **Interaction Management Tips**: The output not only explains the interaction, but also **provides actionable advice** on what medical measures should be taken if two drugs are consumed together.
+- **Clinical-Grade Predictions**: Human-readable interaction descriptions generated from fine-tuned MedAlpaca model.
+- **Interaction Management Tips**: Output provides actionable advice (e.g., dose adjustments, alternatives, and monitoring needs).
+
+---
+
+## 📊 Data Sources
+- [DDI Corpus](https://ddinter.scbdd.com/)
+- [PubChem](https://pubchem.ncbi.nlm.nih.gov/)
+- [Drugs.com](https://www.drugs.com/)
+- ChatGPT-4.0 for data expansion and instruction formatting
 
 ---
 
@@ -68,7 +75,7 @@ The project pipeline is as follows:
 - Merge data from DDI Inter and PubChem.
 - Expand the dataset using LLM.
 - Preprocess and curate high-quality human-readable side effect data.
-- Fine-tune the MedLLaMA-7B model using LoRA for parameter-efficient training.
+- Fine-tune the MedAlpaca-7B model using LoRA for parameter-efficient training.
 - Deploy using a Gradio interface for user interaction.
 
 All modeling, training, and experimentation were conducted using **Google Colab**.
@@ -80,19 +87,33 @@ All modeling, training, and experimentation were conducted using **Google Colab*
 ---
 
 ## 🛠️ Technical Design
-- **Base Model:** `medalpaca/medalpaca-7b (LLAMA-7B)`
-- **Fine-tuning Strategy:** LoRA (Low-Rank Adaptation), 4-bit quantization for resource efficiency
-- **Frameworks and Libraries:** Hugging Face Transformers, PEFT, Accelerate, Gradio
-- **Deployment:** Gradio (or custom server hosting)
+- **Base Model:** `medalpaca/medalpaca-7b`
+- **Fine-tuning Strategy:** LoRA (Low-Rank Adaptation), 4-bit quantization (NF4)
+- **Training Frameworks:** Hugging Face Transformers, PEFT, Accelerate, BitsAndBytes
+- **Interface:** Gradio
+- **Deployment:** Hugging Face Spaces or local server
+
+---
+
+## 📄 Dataset Format
+
+Training data followed instruction-output format (JSONL):
+
+```json
+{
+  "instruction": "Analyze the interaction between aspirin and warfarin.",
+  "output": "Both drugs may increase the risk of bleeding. Monitor for signs of bruising or unusual bleeding."
+}
+```
 
 ---
 
 ## 📦 Required Resources
-- Google Colab (GPU enabled)
-- PyTorch (4-bit compatible version)
-- Hugging Face Transformers and PEFT libraries
-- Gradio for web-based UI
-- Jupyter for data preprocessing and testing
+- Google Colab with GPU (Pro preferred)
+- PyTorch (with CUDA support)
+- Hugging Face Transformers, PEFT, Accelerate, BitsAndBytes
+- Gradio for web interface
+- Jupyter for experimentation and preprocessing
 
 ---
 
@@ -105,38 +126,50 @@ All modeling, training, and experimentation were conducted using **Google Colab*
 | 3    | Dataset Merging | Merged datasets and initial validation |
 | 4    | Dataset Expansion | Used ChatGPT-4.0 for side effect generation |
 | 5    | Preprocessing | Cleaned and structured expanded dataset |
-| 6    | Model Setup | Prepared MedLLaMA-7B base model on Colab |
-| 7    | Fine-tuning Strategy Finalization | Integrated LoRA + 4-bit quantization strategies |
-| 8    | Fine-tuning Model | Conducted parameter-efficient fine-tuning |
-| 9    | Evaluation and Metrics Analysis | Measured perplexity, manual quality checks |
-| 10   | UI Development | Built Gradio-based user interface |
-| 11   | Integration and Testing | Connected model output to UI, tested workflows |
-| 12   | Final Deployment and Demo | Hosted project on Hugging Face Spaces / Web server |
+| 6    | Model Setup | Prepared MedAlpaca base model on Colab |
+| 7    | Fine-tuning Strategy Finalization | Integrated LoRA + 4-bit quantization |
+| 8    | Fine-tuning Model | Trained model on dataset |
+| 9    | Evaluation | Checked perplexity, consistency |
+| 10   | UI Development | Built Gradio interface |
+| 11   | Testing | Integrated and tested end-to-end system |
+| 12   | Final Deployment | Hugging Face Spaces / Gradio |
 
 ---
 
 ## 🧪 Test Cases
-- Validate model output for a wide range of drug pairs.
-- Check output readability, accuracy of predicted side effects, and medical plausibility.
-- Load-testing of the web interface under concurrent users.
+- Verified output for a wide range of drug pairs
+- Assessed medical soundness of interaction warnings
+- Monitored consistency of explanation format
+- Conducted EDA on prediction distribution
+- Ran interface load tests with simulated users
 
 ---
 
 ## 👩🏻‍🏫 Installation Instructions
 
+### ⚙️ Environment Requirements
+
+- Python ≥ 3.9
+- CUDA-enabled GPU (for fine-tuning)
+- Google Colab runtime with GPU enabled:
+
+```text
+Runtime > Change runtime type > GPU
+```
+
+### Install Dependencies
+
 ```bash
-git clone <this-repo-link>
-cd project-directory
 pip install -r requirements.txt
 ```
 
 ---
 
 ## 💡 Tips for Best Usage
-- Use Google Colab with GPU enabled (`Runtime > Change Runtime Type > GPU`) for smooth model loading and interaction.
-- Ensure a stable internet connection while loading large models.
-- For deployments, prefer Hugging Face Spaces or GPU-backed servers for better inference speeds.
-- Validate unknown drug combinations with medical experts before clinical usage.
+- Prefer Colab Pro+ or dedicated GPU VM for training
+- Use clear, generic drug names (e.g., "aspirin", "warfarin")
+- Always cross-reference with certified drug interaction sources
+- Expand model with more examples for multilingual or rare drugs if needed
 
 ---
 
