@@ -1,0 +1,44 @@
+# Core ML Libraries
+torch>=2.0.1
+transformers>=4.37.0
+peft>=0.8.2
+accelerate>=0.24.1
+
+# Tokenization / Model Compatibility
+sentencepiece>=0.1.99
+protobuf>=4.25.1
+
+# Interface
+gradio>=4.16.0
+markdown2>=2.4.10
+
+# Data Processing & Utilities
+pandas>=2.1.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Visualization
+matplotlib>=3.7.1
+seaborn>=0.12.2
+
+# Experiment Tracking (Optional but useful)
+tqdm>=4.66.1
+
+# Colab & Cloud compatibility (optional)
+ipykernel
+ipython
+notebook
+
+# Hugging Face Hub integration (if model or dataset is uploaded/downloaded)
+huggingface_hub>=0.20.0
+
+# Optional metrics & evaluation tools
+evaluate>=0.4.0
+
+# Text preprocessing & NLP utilities
+nltk>=3.8.1
+scikit-learn>=1.3.0
+
+# Web & Hosting (if deployed outside Colab)
+flask>=2.3.0
+requests>=2.31.0
