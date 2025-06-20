@@ -7,10 +7,11 @@
 ---
 
 ## 👩‍🎓 Students
+- Ayush Prajapati
 - Yash Raythatha
 - Ayushi Jar
 - Saurabh
-- Ayush Prajapati
+  
 
 ---
 
